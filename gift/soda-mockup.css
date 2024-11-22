@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+  min-height: 100vh;
+  font-family:Poppins;
+  background:url('B/bg.jpg') center center/cover no-repeat;
+  position:relative;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+header {
+  content:"";
+  position:absolute;
+  background-color:#ecececbd;
+  right:0;
+  top:0;
+  left:0;
+  bottom:0;
+}
+.continar {
+  display:flex;
+  justify-content:space-between;
+  margin:20px 200px;
+  padding:10px;
+}
+.continar .left img {
+  width:250px;
+  height:70px;
+}
+.continar .left h1 {
+  font-family: "Karantina", system-ui;
+  font-size: 190px;
+  line-height: 0.8em;
+}
+.right {
+  padding:20px;
+}
+.right h2{
+  font-family: "Karantina", system-ui;
+  font-size: 60px;
+  line-height: 0.4em;
+  text-transform:uppercase;
+}
+.right div {
+  display:inline-block;
+  font-size:10px;
+  margin-top:20px;
+}
+.one {
+ margin-right:60px;
+
+}
+.right img {
+  width:100px;
+  height:30px;
+  display:block;
+  margin-left:50px;
+  margin-top:20px;
+}
+.banner {
+  height:100vh;
+  overflow:hidden;
+  position:relative;
+}
+.banner .product {
+  position:absolute;
+  width:300px;
+  height:300px;
+  left:55%;
+  bottom:110px;
+  transform:translateX(-50%);
+  Z-index:1;
+  transition:1s;
+  --left:0px;
+}
+.banner .product .soda {
+  background:var(--url) var(--left) 0,
+   url('B/mockup.png');
+  background-size: auto 100%;
+  width:169px;
+  aspect-ratio: 2 / 4;
+  background-blend-mode:multiply;
+  mask-image:url('B/mockup.png');
+  mask-size:auto 100%;
+  transition:1s;
+  position:absolute;
+  left:25%;
+  transform:translateX(-50%);
+}
+.banner .product:hover {
+  transform:translateX(-50%) translateY(-120px); 
+}
+.soda:nth-child(2) {
+  opacity:0;
+}
+.product:hover {
+
+  bottom:100px;
+}
+.product:hover .soda:nth-child(2){
+ 
+  opacity:1;
+  --left:-500px;
+} 
+.product:hover .soda:nth-child(1){
+
+  opacity:0;
+  --left:-500px;
+} 
+.banner .roke {
+  position:absolute;
+  inset:0 0 0 0;
+  pointer-events:none;
+}
+.banner .roke img {
+  position:absolute;
+}
+.banner .roke img:nth-child(1) {
+  transform:translateX(90%);
+  height:155px;
+  bottom:-30px;
+  transition:1s;
+}
+.banner .roke img:nth-child(2) {
+ position:absolute;
+ width:500px;
+ height:500px;
+ bottom:-100px;
+ transition:1s;
+ rotate:10deg;
+}
+.banner .roke img:nth-child(3) {
+  position:absolute;
+  bottom:-100px;
+  height:100%;
+  right:0;
+  rotate:-25deg;
+  transition:0.6s;
+ }
+ .banner:has(.product:hover) .roke img:nth-child(1) {
+  transform:translateX(90%) translateY(40%);
+}
+.banner:has(.product:hover) .roke img:nth-child(2) {
+  transform: translateY(30%);
+ 
+}
+.banner:has(.product:hover) .roke img:nth-child(3) {
+  transform: translateY(20%);
+  right:-70px;
+}
+
+
+
